@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:open_weather_cubit/constants/constants.dart';
+import '../../constants/constants.dart';
 
-import 'package:open_weather_cubit/cubits/weather/weather_cubit.dart';
+import '../weather/weather_cubit.dart';
 
 part 'theme_state.dart';
 

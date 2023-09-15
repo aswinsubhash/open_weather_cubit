@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:open_weather_cubit/models/weather.dart';
-import 'package:open_weather_cubit/repositories/weather_repository.dart';
 
 import '../../models/custom_error.dart';
+import '../../models/weather.dart';
+import '../../repositories/weather_repository.dart';
 
 part 'weather_state.dart';
 
