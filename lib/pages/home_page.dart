@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubits/temp_settings/temp_settings_cubit.dart';
-import '../cubits/weather/weather_cubit.dart';
-import '../widgets/error_dialog.dart';
 import 'package:recase/recase.dart';
 
 import '../constants/constants.dart';
+import '../cubits/temp_settings/temp_settings_cubit.dart';
+import '../cubits/weather/weather_cubit.dart';
+import '../widgets/error_dialog.dart';
 import 'search_page.dart';
 import 'settings_page.dart';
 
