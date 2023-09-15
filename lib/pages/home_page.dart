@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:open_weather_cubit/cubits/temp_settings/temp_settings_cubit.dart';
 import 'package:open_weather_cubit/cubits/weather/weather_cubit.dart';
 import 'package:open_weather_cubit/widgets/error_dialog.dart';
 import 'package:recase/recase.dart';
 
 import '../constants/constants.dart';
 import 'search_page.dart';
-import 'settins_page.dart';
+import 'settings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -67,11 +68,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   String showTemperature(double temperature) {
-    // final tempUnit = context.watch<TempSettingsProvider>().state.tempUnit;
+    final tempUnit = context.watch<TempSettingsCubit>().state.tempUnit;
 
-    // if (tempUnit == TempUnit.fahrenheit) {
-    //   return '${((temperature * 9 / 5) + 32).toStringAsFixed(2)}℉';
-    // }
+    if (tempUnit == TempUnit.fahrenheit) {
+      return '${((temperature * 9 / 5) + 32).toStringAsFixed(2)}℉';
+    }
 
     return '${temperature.toStringAsFixed(2)}℃';
   }
@@ -86,13 +87,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget formatText(String description) {
-  final formattedString = description.titleCase;
-  return Text(
-    formattedString,
-    style: const TextStyle(fontSize: 24.0),
-    textAlign: TextAlign.center,
-  );
-}
+    final formattedString = description.titleCase;
+    return Text(
+      formattedString,
+      style: const TextStyle(fontSize: 24.0),
+      textAlign: TextAlign.center,
+    );
+  }
 
   Widget _showWeather() {
     return BlocConsumer<WeatherCubit, WeatherState>(
